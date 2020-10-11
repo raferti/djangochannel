@@ -10,7 +10,8 @@ class UserForProfileSerializer(serializers.ModelSerializer):
         model = User
         fields = ("id", "username")
 
-
+# UserProfileSerializer == UserProfilePublicSerializer
+# полностью идентичные классы, может грохнуть один из.. ?!
 class UserProfileSerializer(serializers.ModelSerializer):
     """Сериализация профиля пользователя"""
     user = UserForProfileSerializer(read_only=True)
